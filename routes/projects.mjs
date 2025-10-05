@@ -12,37 +12,37 @@ import {
    getAllProjects,
 } from "../controllers/projectsController.mjs";
 
-const router = express.Router();
+const projectsRoutes = express.Router();
 
 // @route   GET /api/projects
 // @desc    Get all active projects (public)
 // @access  Public
-router.get("/", getProjects);
+projectsRoutes.get("/", getProjects);
 
 // @route   GET /api/projects/:id
 // @desc    Get single project (public)
 // @access  Public
-router.get("/:id", getProject);
+projectsRoutes.get("/:id", getProject);
 
 // @route   POST /api/projects
 // @desc    Create new project
 // @access  Private (Admin)
-router.post("/", auth, validateProject, createProject);
+projectsRoutes.post("/", auth, validateProject, createProject);
 
 // @route   PUT /api/projects/:id
 // @desc    Update project
 // @access  Private (Admin)
-router.put("/:id", auth, validateProject, updateProject);
+projectsRoutes.put("/:id", auth, validateProject, updateProject);
 
 // @route   DELETE /api/projects/:id
 // @desc    Delete project (soft delete)
 // @access  Private (Admin)
-router.delete("/:id", auth, deleteProject);
+projectsRoutes.delete("/:id", auth, deleteProject);
 
 // @route   POST /api/projects/:id/upload-images
 // @desc    Upload project images
 // @access  Private (Admin)
-router.post(
+projectsRoutes.post(
    "/:id/upload-images",
    auth,
    uploadMultiple("images", 10),
@@ -52,6 +52,6 @@ router.post(
 // @route   GET /api/projects/admin/all
 // @desc    Get all projects (including inactive) for admin
 // @access  Private (Admin)
-router.get("/admin/all", auth, getAllProjects);
+projectsRoutes.get("/admin/all", auth, getAllProjects);
 
-export default router;
+export default projectsRoutes;
