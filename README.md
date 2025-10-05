@@ -38,7 +38,7 @@ A comprehensive backend API for Dushan's portfolio website built with Node.js, E
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/dushan-portfolio-backend.git
+git clone https://github.com/Dushan-456/Dushan-portfolio-Backend.git
 cd dushan-portfolio-backend
 ```
 
@@ -60,7 +60,7 @@ Edit `.env` file with your configuration:
 
 ```env
 # Database Configuration
-MONGODB_URI=mongodb://localhost:27017/dushan-portfolio
+MONGODB_URI= Your mongodb url
 # For MongoDB Atlas: mongodb+srv://username:password@cluster.mongodb.net/dushan-portfolio
 
 # Server Configuration
@@ -72,8 +72,8 @@ JWT_SECRET=your-super-secret-jwt-key-here
 JWT_EXPIRE=7d
 
 # Admin Credentials (change these in production)
-ADMIN_EMAIL=admin@dushanportfolio.com
-ADMIN_PASSWORD=admin123
+ADMIN_EMAIL=adminemail
+ADMIN_PASSWORD=adminpassword
 
 # CORS Configuration
 FRONTEND_URL=http://localhost:3000
