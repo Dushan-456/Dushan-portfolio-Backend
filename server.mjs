@@ -109,12 +109,12 @@ app.get("/health", (req, res) => {
 });
 
 // API routes
-app.use("/api/auth", authLimiter, authRoutes);
-app.use("/api/personal-details", personalDetailsRoutes);
-app.use("/api/projects", projectsRoutes);
-app.use("/api/skills", skillsRoutes);
-app.use("/api/education", educationRoutes);
-app.use("/api/contact", contactRoutes);
+app.use("/api/v1/auth", authLimiter, authRoutes);
+app.use("/api/v1/personal-details", personalDetailsRoutes);
+app.use("/api/v1/projects", projectsRoutes);
+app.use("/api/v1/skills", skillsRoutes);
+app.use("/api/v1/education", educationRoutes);
+app.use("/api/v1/contact", contactRoutes);
 
 // Root endpoint
 app.get("/", (req, res) => {
