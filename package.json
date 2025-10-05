@@ -1,15 +1,15 @@
 {
-  "name": "dushan-portfolio-backend",
-  "version": "1.0.0",
-  "description": "Backend API for Dushan's portfolio website with admin dashboard",
-  "type": "module",
-  "main": "server.mjs",
-  "scripts": {
-    "start": "node server.mjs",
-    "dev": "nodemon server.mjs",
-    "init": "node scripts/initData.mjs",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+   "name": "dushan-portfolio-backend",
+   "version": "1.0.0",
+   "description": "Backend API for Dushan's portfolio website with admin dashboard",
+   "type": "module",
+   "main": "server.mjs",
+   "scripts": {
+      "start": "node server.mjs",
+      "dev": "nodemon server.mjs",
+      "init": "node scripts/initData.mjs",
+      "test": "echo \"Error: no test specified\" && exit 1"
+   },
    "keywords": [
       "portfolio",
       "backend",
