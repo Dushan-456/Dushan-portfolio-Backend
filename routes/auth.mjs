@@ -9,36 +9,36 @@ import {
    verifyToken,
 } from "../controllers/authController.mjs";
 
-const router = express.Router();
+const authRoutes = express.Router();
 
 // @route   POST /api/auth/login
 // @desc    Admin login
 // @access  Public
-router.post("/login", login);
+authRoutes.post("/login", login);
 
 // @route   GET /api/auth/me
 // @desc    Get current admin info
 // @access  Private
-router.get("/me", getMe);
+authRoutes.get("/me", getMe);
 
 // @route   PUT /api/auth/profile
 // @desc    Update admin profile
 // @access  Private
-router.put("/profile", updateProfile);
+authRoutes.put("/profile", updateProfile);
 
 // @route   PUT /api/auth/change-password
 // @desc    Change admin password
 // @access  Private
-router.put("/change-password", changePassword);
+authRoutes.put("/change-password", changePassword);
 
 // @route   POST /api/auth/logout
 // @desc    Admin logout (client-side token removal)
 // @access  Private
-router.post("/logout", logout);
+authRoutes.post("/logout", logout);
 
 // @route   POST /api/auth/verify-token
 // @desc    Verify JWT token
 // @access  Public
-router.post("/verify-token", verifyToken);
+authRoutes.post("/verify-token", verifyToken);
 
-export default router;
+export default authRoutes;
