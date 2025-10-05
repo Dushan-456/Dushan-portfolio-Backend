@@ -127,60 +127,60 @@ Authorization: Bearer <your-jwt-token>
 
 #### Personal Details
 
--  `GET /api/personal-details` - Get personal details (public)
--  `PUT /api/personal-details` - Update personal details (admin)
--  `POST /api/personal-details/upload-image` - Upload profile image (admin)
--  `POST /api/personal-details/upload-cv` - Upload CV (admin)
+-  `GET /api/v1/personal-details` - Get personal details (public)
+-  `PUT /api/v1/personal-details` - Update personal details (admin)
+-  `POST /api/v1/personal-details/upload-image` - Upload profile image (admin)
+-  `POST /api/v1/personal-details/upload-cv` - Upload CV (admin)
 
 #### Projects
 
--  `GET /api/projects` - Get all active projects (public)
--  `GET /api/projects/:id` - Get single project (public)
--  `POST /api/projects` - Create new project (admin)
--  `PUT /api/projects/:id` - Update project (admin)
--  `DELETE /api/projects/:id` - Delete project (admin)
--  `POST /api/projects/:id/upload-images` - Upload project images (admin)
--  `GET /api/projects/admin/all` - Get all projects including inactive (admin)
+-  `GET /api/v1/projects` - Get all active projects (public)
+-  `GET /api/v1/projects/:id` - Get single project (public)
+-  `POST /api/v1/projects` - Create new project (admin)
+-  `PUT /api/v1/projects/:id` - Update project (admin)
+-  `DELETE /api/v1/projects/:id` - Delete project (admin)
+-  `POST /api/v1/projects/:id/upload-images` - Upload project images (admin)
+-  `GET /api/v1/projects/admin/all` - Get all projects including inactive (admin)
 
 #### Skills
 
--  `GET /api/skills` - Get all active skills (public)
--  `GET /api/skills/categories` - Get skill categories (public)
--  `POST /api/skills` - Create new skill (admin)
--  `PUT /api/skills/:id` - Update skill (admin)
--  `DELETE /api/skills/:id` - Delete skill (admin)
--  `PUT /api/skills/reorder` - Reorder skills (admin)
--  `GET /api/skills/admin/all` - Get all skills including inactive (admin)
+-  `GET /api/v1/skills` - Get all active skills (public)
+-  `GET /api/v1/skills/categories` - Get skill categories (public)
+-  `POST /api/v1/skills` - Create new skill (admin)
+-  `PUT /api/v1/skills/:id` - Update skill (admin)
+-  `DELETE /api/v1/skills/:id` - Delete skill (admin)
+-  `PUT /api/v1/skills/reorder` - Reorder skills (admin)
+-  `GET /api/v1/skills/admin/all` - Get all skills including inactive (admin)
 
 #### Education
 
--  `GET /api/education` - Get all active education records (public)
--  `POST /api/education` - Create new education record (admin)
--  `PUT /api/education/:id` - Update education record (admin)
--  `DELETE /api/education/:id` - Delete education record (admin)
--  `POST /api/education/:id/upload-logo` - Upload institution logo (admin)
--  `POST /api/education/:id/upload-certificate` - Upload certificate (admin)
--  `PUT /api/education/reorder` - Reorder education records (admin)
--  `GET /api/education/admin/all` - Get all education records including inactive (admin)
+-  `GET /api/v1/education` - Get all active education records (public)
+-  `POST /api/v1/education` - Create new education record (admin)
+-  `PUT /api/v1/education/:id` - Update education record (admin)
+-  `DELETE /api/v1/education/:id` - Delete education record (admin)
+-  `POST /api/v1/education/:id/upload-logo` - Upload institution logo (admin)
+-  `POST /api/v1/education/:id/upload-certificate` - Upload certificate (admin)
+-  `PUT /api/v1/education/reorder` - Reorder education records (admin)
+-  `GET /api/v1/education/admin/all` - Get all education records including inactive (admin)
 
 #### Contact
 
--  `POST /api/contact` - Send contact message (public)
--  `GET /api/contact/admin/messages` - Get all contact messages (admin)
--  `GET /api/contact/admin/messages/:id` - Get single contact message (admin)
--  `PUT /api/contact/admin/messages/:id/reply` - Reply to contact message (admin)
--  `PUT /api/contact/admin/messages/:id/read` - Mark message as read/unread (admin)
--  `DELETE /api/contact/admin/messages/:id` - Delete contact message (admin)
--  `GET /api/contact/admin/stats` - Get contact statistics (admin)
+-  `POST /api/v1/contact` - Send contact message (public)
+-  `GET /api/v1/contact/admin/messages` - Get all contact messages (admin)
+-  `GET /api/v1/contact/admin/messages/:id` - Get single contact message (admin)
+-  `PUT /api/v1/contact/admin/messages/:id/reply` - Reply to contact message (admin)
+-  `PUT /api/v1/contact/admin/messages/:id/read` - Mark message as read/unread (admin)
+-  `DELETE /api/v1/contact/admin/messages/:id` - Delete contact message (admin)
+-  `GET /api/v1/contact/admin/stats` - Get contact statistics (admin)
 
 #### Authentication
 
--  `POST /api/auth/login` - Admin login
--  `GET /api/auth/me` - Get current admin info
--  `PUT /api/auth/profile` - Update admin profile
--  `PUT /api/auth/change-password` - Change admin password
--  `POST /api/auth/logout` - Admin logout
--  `POST /api/auth/verify-token` - Verify JWT token
+-  `POST /api/v1/auth/login` - Admin login
+-  `GET /api/v1/auth/me` - Get current admin info
+-  `PUT /api/v1/auth/profile` - Update admin profile
+-  `PUT /api/v1/auth/change-password` - Change admin password
+-  `POST /api/v1/auth/logout` - Admin logout
+-  `POST /api/v1/auth/verify-token` - Verify JWT token
 
 ### Query Parameters
 
@@ -210,7 +210,7 @@ Authorization: Bearer <your-jwt-token>
 ### Login
 
 ```bash
-POST /api/auth/login
+POST /api/v1/auth/login
 Content-Type: application/json
 
 {
