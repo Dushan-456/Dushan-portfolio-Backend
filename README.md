@@ -243,33 +243,40 @@ Content-Type: application/json
 ```
 dushan-portfolio-backend/
 ├── config/
-│   └── database.js          # Database connection configuration
+│   └── database.mjs        # Database connection configuration
+├── controllers/
+│   ├── authController.mjs  # Authentication controller
+│   ├── personalDetailsController.mjs  # Personal details controller
+│   ├── projectsController.mjs         # Projects controller
+│   ├── skillsController.mjs           # Skills controller
+│   ├── educationController.mjs        # Education controller
+│   └── contactController.mjs          # Contact controller
 ├── middleware/
-│   ├── auth.js             # Authentication middleware
-│   ├── validation.js       # Input validation middleware
-│   └── upload.js           # File upload middleware
+│   ├── auth.mjs           # Authentication middleware
+│   ├── validation.mjs     # Input validation middleware
+│   └── upload.mjs         # File upload middleware
 ├── models/
-│   ├── Admin.js            # Admin user model
-│   ├── PersonalDetails.js  # Personal details model
-│   ├── Project.js          # Project model
-│   ├── Skill.js            # Skill model
-│   ├── Education.js        # Education model
-│   └── Contact.js          # Contact message model
+│   ├── Admin.mjs          # Admin user model
+│   ├── PersonalDetails.mjs # Personal details model
+│   ├── Project.mjs        # Project model
+│   ├── Skill.mjs          # Skill model
+│   ├── Education.mjs      # Education model
+│   └── Contact.mjs        # Contact message model
 ├── routes/
-│   ├── auth.js             # Authentication routes
-│   ├── personalDetails.js  # Personal details routes
-│   ├── projects.js         # Project routes
-│   ├── skills.js           # Skill routes
-│   ├── education.js        # Education routes
-│   └── contact.js          # Contact routes
+│   ├── auth.mjs           # Authentication routes
+│   ├── personalDetails.mjs # Personal details routes
+│   ├── projects.mjs       # Project routes
+│   ├── skills.mjs         # Skill routes
+│   ├── education.mjs      # Education routes
+│   └── contact.mjs        # Contact routes
 ├── scripts/
-│   └── initData.js         # Database initialization script
-├── uploads/                # File upload directory
-├── .env                    # Environment variables
-├── .env.example           # Environment variables example
-├── server.js              # Main server file
-├── package.json           # Dependencies and scripts
-└── README.md              # This file
+│   └── initData.mjs       # Database initialization script
+├── uploads/               # File upload directory
+├── .env                   # Environment variables
+├── env.example           # Environment variables example
+├── server.mjs            # Main server file
+├── package.json          # Dependencies and scripts
+└── README.md             # This file
 ```
 
 ## 🔧 Configuration
