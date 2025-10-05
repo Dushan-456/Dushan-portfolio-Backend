@@ -17,6 +17,7 @@ import skillsRoutes from "./routes/skills.mjs";
 import educationRoutes from "./routes/education.mjs";
 import contactRoutes from "./routes/contact.mjs";
 import authRoutes from "./routes/auth.mjs";
+import rootRouter from "./routes/index.mjs";
 
 // Load environment variables
 dotenv.config();
@@ -47,14 +48,14 @@ const limiter = rateLimit({
    },
 });
 
-const authLimiter = rateLimit({
-   windowMs: 15 * 60 * 1000, // 15 minutes
-   max: 5, // limit each IP to 5 requests per windowMs for auth routes
-   message: {
-      success: false,
-      message: "Too many login attempts, please try again later.",
-   },
-});
+//  export const authLimiter = rateLimit({
+//    windowMs: 15 * 60 * 1000, // 15 minutes
+//    max: 5, // limit each IP to 5 requests per windowMs for auth routes
+//    message: {
+//       success: false,
+//       message: "Too many login attempts, please try again later.",
+//    },
+// });
 
 app.use(limiter);
 
@@ -109,12 +110,14 @@ app.get("/health", (req, res) => {
 });
 
 // API routes
-app.use("/api/v1/auth", authLimiter, authRoutes);
-app.use("/api/v1/personal-details", personalDetailsRoutes);
-app.use("/api/v1/projects", projectsRoutes);
-app.use("/api/v1/skills", skillsRoutes);
-app.use("/api/v1/education", educationRoutes);
-app.use("/api/v1/contact", contactRoutes);
+app.use("/api/v1", rootRouter);
+
+// app.use("/api/v1/auth", authLimiter, authRoutes);
+// app.use("/api/v1/personal-details", personalDetailsRoutes);
+// app.use("/api/v1/projects", projectsRoutes);
+// app.use("/api/v1/skills", skillsRoutes);
+// app.use("/api/v1/education", educationRoutes);
+// app.use("/api/v1/contact", contactRoutes);
 
 // Root endpoint
 app.get("/", (req, res) => {
@@ -130,7 +133,7 @@ app.get("/", (req, res) => {
          contact: "/api/contact",
          auth: "/api/auth",
       },
-      documentation: "https://github.com/yourusername/dushan-portfolio-backend",
+      documentation: "https://github.com/Dushan-456/dushan-portfolio-backend",
    });
 });
 
