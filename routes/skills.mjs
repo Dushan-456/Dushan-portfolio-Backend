@@ -11,41 +11,41 @@ import {
    getAllSkills,
 } from "../controllers/skillsController.mjs";
 
-const router = express.Router();
+const skillsRoutes = express.Router();
 
 // @route   GET /api/skills
 // @desc    Get all active skills (public)
 // @access  Public
-router.get("/", getSkills);
+skillsRoutes.get("/", getSkills);
 
 // @route   GET /api/skills/categories
 // @desc    Get skill categories (public)
 // @access  Public
-router.get("/categories", getSkillCategories);
+skillsRoutes.get("/categories", getSkillCategories);
 
 // @route   POST /api/skills
 // @desc    Create new skill
 // @access  Private (Admin)
-router.post("/", auth, validateSkill, createSkill);
+skillsRoutes.post("/", auth, validateSkill, createSkill);
 
 // @route   PUT /api/skills/:id
 // @desc    Update skill
 // @access  Private (Admin)
-router.put("/:id", auth, validateSkill, updateSkill);
+skillsRoutes.put("/:id", auth, validateSkill, updateSkill);
 
 // @route   DELETE /api/skills/:id
 // @desc    Delete skill (soft delete)
 // @access  Private (Admin)
-router.delete("/:id", auth, deleteSkill);
+skillsRoutes.delete("/:id", auth, deleteSkill);
 
 // @route   PUT /api/skills/reorder
 // @desc    Reorder skills
 // @access  Private (Admin)
-router.put("/reorder", auth, reorderSkills);
+skillsRoutes.put("/reorder", auth, reorderSkills);
 
 // @route   GET /api/skills/admin/all
 // @desc    Get all skills (including inactive) for admin
 // @access  Private (Admin)
-router.get("/admin/all", auth, getAllSkills);
+skillsRoutes.get("/admin/all", auth, getAllSkills);
 
-export default router;
+export default skillsRoutes;
