@@ -1,5 +1,12 @@
 import { Router } from "express";
 import dotenv from "dotenv";
+import authRoutes from "./auth.mjs";
+import personalDetailsRoutes from "./personalDetails.mjs";
+import projectsRoutes from "./projects.mjs";
+import skillsRoutes from "./skills.mjs";
+import educationRoutes from "./education.mjs";
+import contactRoutes from "./contact.mjs";
+import rateLimit from "express-rate-limit";
 
 // Load environment variables
 dotenv.config();
@@ -9,7 +16,7 @@ dotenv.config();
 const rootRouter = Router();
 
 // Root endpoint
-app.get("/", (req, res) => {
+rootRouter.get("/", (req, res) => {
     res.json({
        success: true,
        message: "Dushan Portfolio Backend API",
@@ -26,7 +33,7 @@ app.get("/", (req, res) => {
     });
  });
 // Health check endpoint (to test if API is running)
-app.get("/health", (req, res) => {
+rootRouter.get("/health", (req, res) => {
     res.json({
        success: true,
        message: "Server is running",
@@ -35,6 +42,14 @@ app.get("/health", (req, res) => {
     });
  });
  
+  const authLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 5, // limit each IP to 5 requests per windowMs for auth routes
+    message: {
+       success: false,
+       message: "Too many login attempts, please try again later.",
+    },
+ });
 // API routes
 rootRouter.use("/auth", authLimiter, authRoutes);
 rootRouter.use("/personal-details", personalDetailsRoutes);
