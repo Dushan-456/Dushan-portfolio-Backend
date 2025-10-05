@@ -9,26 +9,26 @@ import {
    uploadCV,
 } from "../controllers/personalDetailsController.mjs";
 
-const router = express.Router();
+const personalDetailsRoutes = express.Router();
 
 // @route   GET /api/personal-details
 // @desc    Get personal details (public)
 // @access  Public
-router.get("/", getPersonalDetails);
+personalDetailsRoutes.get("/", getPersonalDetails);
 
 // @route   PUT /api/personal-details
 // @desc    Update personal details
 // @access  Private (Admin)
-router.put("/", auth, validatePersonalDetails, updatePersonalDetails);
+personalDetailsRoutes.put("/", auth, validatePersonalDetails, updatePersonalDetails);
 
 // @route   POST /api/personal-details/upload-image
 // @desc    Upload profile image
 // @access  Private (Admin)
-router.post("/upload-image", auth, uploadSingle("image"), uploadProfileImage);
+personalDetailsRoutes.post("/upload-image", auth, uploadSingle("image"), uploadProfileImage);
 
 // @route   POST /api/personal-details/upload-cv
 // @desc    Upload CV
 // @access  Private (Admin)
-router.post("/upload-cv", auth, uploadSingle("cv"), uploadCV);
+personalDetailsRoutes.post("/upload-cv", auth, uploadSingle("cv"), uploadCV);
 
-export default router;
+export default personalDetailsRoutes;
