@@ -6,17 +6,7 @@ import rateLimit from "express-rate-limit";
 import path from "path";
 import { fileURLToPath } from "url";
 import dotenv from "dotenv";
-
-// Import database connection
 import connectDB from "./config/database.mjs";
-
-// Import routes
-import personalDetailsRoutes from "./routes/personalDetails.mjs";
-import projectsRoutes from "./routes/projects.mjs";
-import skillsRoutes from "./routes/skills.mjs";
-import educationRoutes from "./routes/education.mjs";
-import contactRoutes from "./routes/contact.mjs";
-import authRoutes from "./routes/auth.mjs";
 import rootRouter from "./routes/index.mjs";
 
 // Load environment variables
